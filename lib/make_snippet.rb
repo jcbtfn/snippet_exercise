@@ -1,24 +1,13 @@
 # A method called make_snippet that takes a string as an argument and returns 
 # the first five words and then a '...' if there are more than that.
 
-def make_snippet(string)
+def make_snippet(string, maxwords = 5)
     if string == "" || string == " "
-        puts "There is no string: " + string.to_s
-        return "There is no string"
+        return "Empty string"
     else
-        count = string.count(" ") + 1
-        if count > 5
-            aux = string.split
-            i = 0
-            aux2 = ""
-            while i < 5
-                aux2 = aux2 + aux[i]
-                if i < 4
-                    aux2 = aux2 + " "
-                end
-                i += 1
-            end
-            return aux2 + "."*3
+        if string.split.length > maxwords
+            puts string.split
+            return string.split[0,maxwords].join(" ") + "."*3
         else
             return string
         end

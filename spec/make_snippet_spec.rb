@@ -3,7 +3,7 @@ require "make_snippet"
 RSpec.describe "make_snippet method" do 
     it "given an empty string return" do
         result = make_snippet("")
-        expect(result).to eq "There is no string"
+        expect(result).to eq "Empty string"
     end
     it "given an string smaller than 5 words" do
         result = make_snippet("Hola, ¿qué tal?")
